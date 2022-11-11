@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFireStore, collection, addDoc, getDocs, doc, updateDoc,deleteDoc } from 'firebase/firestore'
+import { getFireStore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { API_KEY } from '../../constants/envValues'
 
 export class Database {
@@ -32,12 +32,12 @@ export class Database {
     }
 
     update(collectionKey, id, body) { 
-        const document = doc(this._database,collectionKey,id);
+        const document = doc(this._database, collectionKey, id);
         return updateDoc(document, body)
     }
 
     delete(collectionKey, id) { 
-        const document = doc(this._database,collectionKey,id);
+        const document = doc(this._database, collectionKey, id);
         return deleteDoc(document)
     }
 

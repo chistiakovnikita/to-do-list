@@ -8,6 +8,7 @@ export class Component extends HTMLElement {
     setState(callback) {
         this.state = callback(this.state);
         this.innerHTML = this.render()
+            .toString()
             .trim()
             .replaceAll(/true|false/gi, "")
             .replaceAll(",", "");
@@ -16,8 +17,8 @@ export class Component extends HTMLElement {
     }
 
     connectedCallback() {
-        console.log('asdasd')
         this.innerHTML = this.render()
+            .toString()
             .trim()
             .replaceAll(/true|false/gi, "")
             .replaceAll(",", "");
@@ -42,7 +43,7 @@ export class Component extends HTMLElement {
     }
 
     registerEvents() {
-       
+
     }
 
     componentDidMount() {
