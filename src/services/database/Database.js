@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getFireStore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc } from 'firebase/firestore';
-import { API_KEY } from '../../constants/envValues'
+import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { API_KEY } from '../../constants/envValues';
 
 export class Database {
     constructor() {
@@ -15,7 +15,7 @@ export class Database {
         };
 
         const app = initializeApp(firebaseConfig);
-        this._database = getFireStore(app);
+        this._database = getFirestore(app);
 
     }
 

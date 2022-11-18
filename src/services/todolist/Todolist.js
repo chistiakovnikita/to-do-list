@@ -1,6 +1,6 @@
 import { Database } from '../database/Database';
 
-class Todolist {
+class TodoList {
     constructor() {
         this.database = Database.getInstance();
     }
@@ -13,4 +13,4 @@ createTask(body) {
 }
 
 
-export const todolist = new Todolist();
+export const todoList = new TodoList();

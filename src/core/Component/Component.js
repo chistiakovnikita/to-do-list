@@ -1,64 +1,48 @@
 export class Component extends HTMLElement {
     constructor() {
-        super()
-        this.state = {}
+        super();
         this.props = {}
+        this.state = {}
     }
+
 
     setState(callback) {
         this.state = callback(this.state);
-        this.innerHTML = this.render()
-            .toString()
-            .trim()
-            .replaceAll(/true|false/gi, "")
-            .replaceAll(",", "");
-
-
+        this.innerHTML = this.render();
     }
 
     connectedCallback() {
-        this.innerHTML = this.render()
-            .toString()
-            .trim()
-            .replaceAll(/true|false/gi, "")
-            .replaceAll(",", "");
-        this.componentDidMount()
-        this.registerEvents()
+        this.innerHTML = this.render();
+        this.componentDidMount();
     }
 
-    disconnectedCallBack() {
-        this.componentWillUnMount()
+    disconnectedCallback() {
+        this.componentWillUnmount()
     }
 
     attributeChangeCallback(name, oldValue, newValue) {
         this.componentWillUpdate(name, oldValue, newValue)
-        this.getAttributeNames().forEach(() => {
-            this.props[name] = this.getAttribute(name)
+        this.getAttributeNames().forEach((name) => {
+         this.props[name] = this.getAttribute(name)
         })
+
+     }
+
+     dispatch(type, props) {
+        this.dispatchEvent(new CustomEvent(type, { bubbles: true, detail: props }));
     }
 
 
-    dispatch(type, props) {
-        this.dispatchEvent(new CustomEvent(type, { bubbles: true, detail: props }))
-    }
 
-    registerEvents() {
+ 
 
-    }
 
-    componentDidMount() {
 
-    }
 
-    componentWillUpdate() {
+    render() {}
+    componentDidMount() {}
+    componentWillUnmount() {}
+    componentWillUpdate() {}
 
-    }
 
-    componentWillUnMount() {
-
-    }
-
-    render() {
-
-    }
 }
