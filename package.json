@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chistiakovnikita"
+    "url": "git+https://github.com/sashaklimenok/mentoring-webpack-starter.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chistiakovnikita"
+    "url": "https://github.com/sashaklimenok/mentoring-webpack-starter/issues"
   },
-  "homepage": "https://github.com/chistiakovnikita",
+  "homepage": "https://github.com/sashaklimenok/mentoring-webpack-starter#readme",
   "devDependencies": {
     "@babel/core": "^7.18.9",
     "@babel/preset-env": "^7.18.9",

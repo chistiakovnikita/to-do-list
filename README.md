@@ -1,1 +1,1 @@
-# to-do-list
+# mentoring-simple-webpack-starter

@@ -1,24 +1,23 @@
 import { Component } from "../../../core";
+import { todoList } from '../../../services/todoList/TodoList'
 import '../../atoms/Button/Button';
 import '../../atoms/Input/Input';
-import { todoList } from "../../../services/todolist/Todolist";
 
 export class InputGroup extends Component {
+
     constructor() {
-        super()
+        super();
         this.state = {
             inputValue: ''
         }
     }
 
-
     onSave() {
-        if (this.state.inputValue) {
+        if(this.state.inputValue) {
             todoList.createTask({
                 title: this.state.inputValue,
                 isCompleted: false
             })
-
         }
     }
 
@@ -26,13 +25,13 @@ export class InputGroup extends Component {
         this.setState((state) => {
             return {
                 ...state,
-                inputValue: evt.detail.value,
+                inputValue: evt.detail.value
             }
         })
     }
 
     componentDidMount() {
-        this.addEventListener('save-task', this.onSave)
+        this.addEventListener('save-task', this.onSave);
         this.addEventListener('custom-input', this.onInput)
     }
 
@@ -45,6 +44,5 @@ export class InputGroup extends Component {
         `
     }
 }
-
 
 customElements.define('my-input-group', InputGroup)
