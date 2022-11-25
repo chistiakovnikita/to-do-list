@@ -8,9 +8,13 @@ class TodoList {
     return this.database.create("tasks", body);
   }
 
-getTasks() {
-  return this.database.read('tasks')
-}
+  getTasks() {
+    return this.database.read('tasks')
+  }
+
+  deleteTask(id) {
+    return this.database.delete('tasks', id)
+  }
 
 }
 
